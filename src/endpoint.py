@@ -7,15 +7,15 @@ import os
 
 app = flask.Flask(__name__)
 
+DOMAIN              = os.environ['DOMAIN']
 TELEGRAM_BOT_ID     = os.environ['TELEGRAM_BOT_ID']
-TELEGRAM_BOT_DOMAIN = os.environ['TELEGRAM_BOT_DOMAIN']
 TELEGRAM_BOT_SECRET = os.environ['TELEGRAM_BOT_SECRET']
 
 @app.route('/')
 def index():
     return flask.render_template('index.htm',
+        DOMAIN=DOMAIN,
         TELEGRAM_BOT_ID=TELEGRAM_BOT_ID,
-        TELEGRAM_BOT_DOMAIN=TELEGRAM_BOT_DOMAIN,
     )
 
 @app.route('/telegram-auth-callback/')

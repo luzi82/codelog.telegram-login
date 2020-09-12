@@ -6,8 +6,8 @@ provider:
   name: aws
   runtime: python3.7
   environment:
+    DOMAIN:              ${file(../conf/conf.json):DOMAIN}
     TELEGRAM_BOT_ID:     ${file(../conf/conf.json):TELEGRAM_BOT_ID}
-    TELEGRAM_BOT_DOMAIN: ${file(../conf/conf.json):TELEGRAM_BOT_DOMAIN}
     TELEGRAM_BOT_SECRET: ${file(../conf/conf.json):TELEGRAM_BOT_SECRET}
 
 functions:
