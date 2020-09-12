@@ -2,6 +2,10 @@
 
 PROJECT_ROOT_PATH=${PWD}
 
+export TELEGRAM_BOT_ID=`cat conf/conf.json | jq -r .TELEGRAM_BOT_ID`
+export TELEGRAM_BOT_DOMAIN=`cat conf/conf.json | jq -r .TELEGRAM_BOT_DOMAIN`
+export TELEGRAM_BOT_SECRET=`cat conf/conf.json | jq -r .TELEGRAM_BOT_SECRET`
+
 # clean up
 cd ${PROJECT_ROOT_PATH}
 rm -rf venv-local-test
