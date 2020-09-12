@@ -1,6 +1,6 @@
 service: codelog-telegram-login
 
-frameworkVersion: ">=1.78.1 <2.0.0"
+frameworkVersion: ">=2.0.0 <3.0.0"
 
 provider:
   name: aws
@@ -24,7 +24,7 @@ custom:
   pythonRequirements:
     dockerizePip: false
   customDomain:
-    domainName: ${file(../conf/conf.json):TELEGRAM_BOT_DOMAIN}
+    domainName: ${file(../conf/conf.json):DOMAIN}
     basePath: ''
     stage: ${self:provider.stage}
     createRoute53Record: true
