@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# The local site is not able to show Telegram login button
+# as the local site domain is not same as Telegram bot setting.
+
 PROJECT_ROOT_PATH=${PWD}
 
 export DOMAIN=`cat conf/conf.json | jq -r .DOMAIN`
